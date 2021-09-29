@@ -6,24 +6,32 @@
         <element id="file-copy" path="$PROJECT_DIR$/src/main/kotlin/META-INF/MANIFEST.MF" />
       </element>
       <element id="module-output" name="Documents-Organizer" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.31/kotlin-stdlib-common-1.5.31.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-uima/1.9.3/opennlp-uima-1.9.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.5.31/kotlin-stdlib-1.5.31.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/tika/tika-core/1.27/tika-core-1.27.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.9.3/opennlp-tools-1.9.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/no/tornado/tornadofx/1.7.20/tornadofx-1.7.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/json/javax.json-api/1.1.2/javax.json-api-1.1.2.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/8.40.14/controlsfx-8.40.14.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2-win.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/1.3.61/kotlin-reflect-1.3.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/no/tornado/tornadofx-controlsfx/0.1/tornadofx-controlsfx-0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-tools/1.9.3/opennlp-tools-1.9.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/opennlp/opennlp-uima/1.9.3/opennlp-uima-1.9.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/tika-app-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/tornadofx-1.7.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/opennlp-uima-1.9.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/opennlp-tools-1.9.3.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.3.61/kotlin-stdlib-jdk8-1.3.61.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/glassfish/javax.json/1.1.2/javax.json-1.1.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/tika/tika-bundle/1.27/tika-bundle-1.27.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/1.3.61/kotlin-reflect-1.3.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.5.31/kotlin-stdlib-common-1.5.31.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/glassfish/javax.json/1.1.2/javax.json-1.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/no/tornado/tornadofx/1.7.20/tornadofx-1.7.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.5.31/kotlin-stdlib-1.5.31.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/lib/src.zip" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/lib/javafx-swt.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/lib/javafx.web.jar" path-in-jar="/" />
@@ -33,101 +41,19 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/lib/javafx.swing.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/lib/javafx.controls.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/lib/javafx.graphics.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/no/tornado/tornadofx-controlsfx/0.1/tornadofx-controlsfx-0.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/dependencies/tika-app-2.0.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/json/javax.json-api/1.1.2/javax.json-api-1.1.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.3.61/kotlin-stdlib-jdk7-1.3.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/no/tornado/fxlauncher/1.0.21/fxlauncher-1.0.21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/tika/tika-bundle/1.27/tika-bundle-1.27.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11.0.2/javafx-graphics-11.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/8.40.14/controlsfx-8.40.14.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/tika/tika-core/1.27/tika-core-1.27.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11.0.2/javafx-base-11.0.2-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/11.0.2/javafx-controls-11.0.2.jar" path-in-jar="/" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-console-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-datetime-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-debug-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-errorhandling-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-file-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-file-l1-2-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-file-l2-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-handle-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-heap-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-interlocked-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-libraryloader-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-localization-l1-2-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-memory-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-namedpipe-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-processenvironment-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-processthreads-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-processthreads-l1-1-1.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-profile-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-string-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-synch-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-synch-l1-2-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-sysinfo-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-timezone-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-core-util-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-conio-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-convert-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-environment-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-filesystem-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-heap-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-locale-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-math-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-multibyte-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-private-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-process-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-runtime-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-stdio-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-string-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-time-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/api-ms-win-crt-utility-l1-1-0.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/concrt140.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/decora_sse.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/fxplugins.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/glass.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/glib-lite.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/gstreamer-lite.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/javafx_font.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/javafx_iio.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/jfxmedia.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/jfxwebkit.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/msvcp140.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/prism_common.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/prism_d3d.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/prism_sw.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/ucrtbase.dll" />
-      <element id="file-copy" path="$PROJECT_DIR$/../../javafx-sdk-11.0.2/bin/vcruntime140.dll" />
-      <element id="library" level="project" name="tika-app-2.0.0" />
-      <element id="library" level="project" name="lib" />
-      <element id="library" level="project" name="Maven: no.tornado:tornadofx:1.7.20" />
-      <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.1.2" />
-      <element id="library" level="project" name="Maven: javax.json:javax.json-api:1.1.2" />
-      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.61" />
-      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.61" />
-      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-reflect:1.3.61" />
-      <element id="library" level="project" name="Maven: no.tornado:fxlauncher:1.0.21" />
-      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.5.31" />
-      <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
-      <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31" />
-      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:11.0.2" />
-      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:11.0.2" />
-      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:11.0.2" />
-      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:11.0.2" />
-      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:11.0.2" />
-      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:11.0.2" />
-      <element id="library" level="project" name="Maven: no.tornado:tornadofx-controlsfx:0.1" />
-      <element id="library" level="project" name="Maven: org.controlsfx:controlsfx:8.40.14" />
-      <element id="library" level="project" name="Maven: org.apache.opennlp:opennlp-tools:1.9.3" />
-      <element id="library" level="project" name="Maven: org.apache.opennlp:opennlp-uima:1.9.3" />
-      <element id="library" level="project" name="Maven: org.apache.tika:tika-bundle:1.27" />
-      <element id="library" level="project" name="Maven: org.apache.tika:tika-core:1.27" />
-      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.30" />
-      <element id="library" level="project" name="Maven: commons-io:commons-io:2.10.0" />
-      <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" />
-      <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" />
-      <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.12.0" />
     </root>
   </artifact>
 </component>
