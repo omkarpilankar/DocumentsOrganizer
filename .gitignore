@@ -23,7 +23,6 @@
 hs_err_pid*
 
 # misc folders
-target\
-out\
-
-.idea\
+target/
+out/
+.idea/
