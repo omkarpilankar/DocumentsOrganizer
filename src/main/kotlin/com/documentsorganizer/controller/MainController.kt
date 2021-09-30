@@ -60,7 +60,7 @@ class MainController : Controller() {
                 }
             }
             if (count == numberOfFiles) {
-                alert(Alert.AlertType.ERROR, "No files found", "No files found in the selected directory. Supported file extensions are .pdf, .doc, .docx", ButtonType.OK)
+                alert(Alert.AlertType.ERROR, "", "No files found in the selected directory. Supported file extensions are .pdf, .doc, .docx", ButtonType.OK)
             }
         }
 
@@ -79,7 +79,7 @@ class MainController : Controller() {
 
     fun addToFinal() {
         if (finalFilesList.containsAll(selectedFilesList)) {
-            alert(Alert.AlertType.WARNING, "Selected files already added", "File(s) already added to final list", ButtonType.OK)
+            alert(Alert.AlertType.WARNING, "", "File(s) already added to final list", ButtonType.OK)
         } else {
             finalFilesList.addAll(selectedFilesList)
         }
@@ -87,7 +87,7 @@ class MainController : Controller() {
 
     fun addAllToFinal() {
         if (finalFilesList.containsAll(filesList)) {
-            alert(Alert.AlertType.WARNING, "All files already added", "All files already added to final list", ButtonType.OK)
+            alert(Alert.AlertType.WARNING, "", "All files already added to final list", ButtonType.OK)
         } else {
             finalFilesList.addAll(filesList)
         }
@@ -95,7 +95,7 @@ class MainController : Controller() {
 
     fun removeFromFinal() {
         if (finalFilesList.isEmpty()) {
-            alert(Alert.AlertType.WARNING, "Selected files already removed", "File(s) already removed from final list", ButtonType.OK)
+            alert(Alert.AlertType.WARNING, "", "File(s) already removed from final list", ButtonType.OK)
         } else {
             finalFilesList.removeAll(selectedFinalFilesList)
         }
@@ -103,7 +103,7 @@ class MainController : Controller() {
 
     fun removeAllFromFinal() {
         if (finalFilesList.isEmpty()) {
-            alert(Alert.AlertType.WARNING, "All files already removed", "All files already removed from final list", ButtonType.OK)
+            alert(Alert.AlertType.WARNING, "", "All files already removed from final list", ButtonType.OK)
         } else {
             finalFilesList.removeAll(finalFilesList)
         }
@@ -121,7 +121,7 @@ class MainController : Controller() {
                         Paths.get(((mainView.labelText.value).toString() + File.separator + i["Category"].toString() + File.separator + i["Filename"].toString()))
                     Files.move(source, target, StandardCopyOption.REPLACE_EXISTING)
                 } catch (e: IOException) {
-                    alert(Alert.AlertType.WARNING, "Moving files failed", "Moving files failed", ButtonType.OK)
+                    alert(Alert.AlertType.WARNING, "", "Moving files failed", ButtonType.OK)
                     e.printStackTrace()
                 }
             } else {
@@ -136,7 +136,7 @@ class MainController : Controller() {
                         Paths.get(((mainView.labelText.value).toString() + File.separator + i["Category"].toString() + File.separator + i["Filename"].toString()))
                     Files.move(source, target, StandardCopyOption.REPLACE_EXISTING)
                 } catch (e: IOException) {
-                    alert(Alert.AlertType.WARNING, "Moving files failed", "Moving files failed", ButtonType.OK)
+                    alert(Alert.AlertType.WARNING, "", "Moving files failed", ButtonType.OK)
                     e.printStackTrace()
                 }
             }

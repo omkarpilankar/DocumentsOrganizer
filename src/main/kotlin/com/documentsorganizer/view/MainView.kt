@@ -27,6 +27,9 @@ class MainView : View("Documents Organizer") {
                         item("Exit", "Shortcut+x").action {
                             primaryStage.close()
                         }
+                        item("Download Training Data", "Shortcut+t").action {
+                            alert(Alert.AlertType.INFORMATION, "Download Training Data", "", )
+                        }
                     }
                     menu("Help") {
                         item("Documentation", "Shortcut+d").action {
@@ -210,13 +213,13 @@ class MainView : View("Documents Organizer") {
                             action {
                                 if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
                                     if (mainController.finalFilesList.isEmpty()) {
-                                        alert(Alert.AlertType.WARNING, "No files in final list", "Please add files to final list to continue", ButtonType.OK)
+                                        alert(Alert.AlertType.WARNING, "", "No files in final list, Please add files to final list to continue", ButtonType.OK)
 
                                     } else {
                                         replaceWith<SceneTwo>()
                                     }
                                 } else {
-                                    alert(Alert.AlertType.ERROR, "No train data file found", "Training data file not found", ButtonType.OK)
+                                    alert(Alert.AlertType.ERROR, "", "Training data file not found", ButtonType.OK)
                                 }
                             }
                             style {
