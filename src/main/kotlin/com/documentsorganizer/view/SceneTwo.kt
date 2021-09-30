@@ -27,10 +27,10 @@ class SceneTwo : View("Documents Organizer") {
                     }
                 }
                 menu("Help") {
-                    item("Documentation").action {
+                    item("Documentation", "Shortcut+d").action {
                         hostServices.showDocument("")
                     }
-                    item("About").action {
+                    item("About", "Shortcut+a").action {
                         AboutView().openWindow()
                     }
                 }

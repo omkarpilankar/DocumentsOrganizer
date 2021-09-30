@@ -7,25 +7,6 @@ import tornadofx.*
 class FinalScene : View("Documents Organizer") {
     override val root = borderpane {
 
-        top {
-            menubar {
-                isVisible = true
-                menu("File") {
-                    item("Exit", "Shortcut+x").action {
-                        primaryStage.close()
-                    }
-                }
-                menu("Help") {
-                    item("Documentation").action {
-                        hostServices.showDocument("")
-                    }
-                    item("About").action {
-                        AboutView().openWindow()
-                    }
-                }
-            }
-        }
-
         center {
             label("Categorization Completed") {
                 style {
