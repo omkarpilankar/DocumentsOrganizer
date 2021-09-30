@@ -3,6 +3,8 @@ package com.documentsorganizer.controller
 import com.documentsorganizer.view.MainView
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
+import javafx.scene.control.Alert
+import javafx.scene.control.ButtonType
 import javafx.stage.DirectoryChooser
 import tornadofx.*
 import java.io.File
@@ -58,7 +60,7 @@ class MainController : Controller() {
                 }
             }
             if (count == numberOfFiles) {
-                Toast.makeText(primaryStage, "No file(s) found", 1500, 500, 500)
+                alert(Alert.AlertType.ERROR, "No files found", "No files found in the selected directory. Supported file extensions are .pdf, .doc, .docx", ButtonType.OK)
             }
         }
 
@@ -77,7 +79,7 @@ class MainController : Controller() {
 
     fun addToFinal() {
         if (finalFilesList.containsAll(selectedFilesList)) {
-            Toast.makeText(primaryStage, "File(s) already added to final list", 1500, 500, 500)
+            alert(Alert.AlertType.WARNING, "Selected files already added", "File(s) already added to final list", ButtonType.OK)
         } else {
             finalFilesList.addAll(selectedFilesList)
         }
@@ -85,7 +87,7 @@ class MainController : Controller() {
 
     fun addAllToFinal() {
         if (finalFilesList.containsAll(filesList)) {
-            Toast.makeText(primaryStage, "All files already added to final list", 1500, 500, 500)
+            alert(Alert.AlertType.WARNING, "All files already added", "All files already added to final list", ButtonType.OK)
         } else {
             finalFilesList.addAll(filesList)
         }
@@ -93,7 +95,7 @@ class MainController : Controller() {
 
     fun removeFromFinal() {
         if (finalFilesList.isEmpty()) {
-            Toast.makeText(primaryStage, "File(s) already removed from final list", 1500, 500, 500)
+            alert(Alert.AlertType.WARNING, "Selected files already removed", "File(s) already removed from final list", ButtonType.OK)
         } else {
             finalFilesList.removeAll(selectedFinalFilesList)
         }
@@ -101,7 +103,7 @@ class MainController : Controller() {
 
     fun removeAllFromFinal() {
         if (finalFilesList.isEmpty()) {
-            Toast.makeText(primaryStage, "All files already removed from final list", 1500, 500, 500)
+            alert(Alert.AlertType.WARNING, "All files already removed", "All files already removed from final list", ButtonType.OK)
         } else {
             finalFilesList.removeAll(finalFilesList)
         }
@@ -119,7 +121,7 @@ class MainController : Controller() {
                         Paths.get(((mainView.labelText.value).toString() + File.separator + i["Category"].toString() + File.separator + i["Filename"].toString()))
                     Files.move(source, target, StandardCopyOption.REPLACE_EXISTING)
                 } catch (e: IOException) {
-                    Toast.makeText(primaryStage, "Moving files failed", 500, 500, 500)
+                    alert(Alert.AlertType.WARNING, "Moving files failed", "Moving files failed", ButtonType.OK)
                     e.printStackTrace()
                 }
             } else {
@@ -134,7 +136,7 @@ class MainController : Controller() {
                         Paths.get(((mainView.labelText.value).toString() + File.separator + i["Category"].toString() + File.separator + i["Filename"].toString()))
                     Files.move(source, target, StandardCopyOption.REPLACE_EXISTING)
                 } catch (e: IOException) {
-                    Toast.makeText(primaryStage, "Moving files failed", 500, 500, 500)
+                    alert(Alert.AlertType.WARNING, "Moving files failed", "Moving files failed", ButtonType.OK)
                     e.printStackTrace()
                 }
             }

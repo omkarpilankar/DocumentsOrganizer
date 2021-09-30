@@ -1,9 +1,10 @@
 package com.documentsorganizer.view
 
 import com.documentsorganizer.controller.MainController
-import com.documentsorganizer.controller.Toast
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Pos
+import javafx.scene.control.Alert
+import javafx.scene.control.ButtonType
 import javafx.scene.control.SelectionMode
 import javafx.scene.text.FontWeight
 import tornadofx.*
@@ -207,13 +208,8 @@ class MainView : View("Documents Organizer") {
                             }
                             action {
                                 if (mainController.finalFilesList.isEmpty()) {
-                                    Toast.makeText(
-                                        primaryStage,
-                                        "Please add files in the Final List to continue",
-                                        1500,
-                                        500,
-                                        500
-                                    )
+                                    alert(Alert.AlertType.WARNING, "No files in final list", "Please add files to final list to continue", ButtonType.OK)
+
                                 } else {
                                     replaceWith<SceneTwo>()
                                 }
