@@ -8,6 +8,7 @@ import javafx.scene.control.ButtonType
 import javafx.scene.control.SelectionMode
 import javafx.scene.text.FontWeight
 import tornadofx.*
+import java.io.File
 
 class MainView : View("Documents Organizer") {
 
@@ -207,11 +208,15 @@ class MainView : View("Documents Organizer") {
                                 marginRight = 10.0
                             }
                             action {
-                                if (mainController.finalFilesList.isEmpty()) {
-                                    alert(Alert.AlertType.WARNING, "No files in final list", "Please add files to final list to continue", ButtonType.OK)
+                                if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
+                                    if (mainController.finalFilesList.isEmpty()) {
+                                        alert(Alert.AlertType.WARNING, "No files in final list", "Please add files to final list to continue", ButtonType.OK)
 
+                                    } else {
+                                        replaceWith<SceneTwo>()
+                                    }
                                 } else {
-                                    replaceWith<SceneTwo>()
+                                    alert(Alert.AlertType.ERROR, "No train data file found", "Training data file not found", ButtonType.OK)
                                 }
                             }
                             style {
