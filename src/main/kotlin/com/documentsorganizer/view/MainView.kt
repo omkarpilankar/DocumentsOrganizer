@@ -27,9 +27,6 @@ class MainView : View("Documents Organizer") {
                         item("Exit", "Shortcut+x").action {
                             primaryStage.close()
                         }
-                        item("Download Training Data", "Shortcut+t").action {
-                            alert(Alert.AlertType.INFORMATION, "Download Training Data", "", )
-                        }
                     }
                     menu("Help") {
                         item("Documentation", "Shortcut+d").action {
