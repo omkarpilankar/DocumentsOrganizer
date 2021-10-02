@@ -2,7 +2,6 @@ package com.documentsorganizer.view
 
 import com.documentsorganizer.controller.MainController
 import javafx.beans.property.SimpleStringProperty
-import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
@@ -200,7 +199,7 @@ class MainView : View("Documents Organizer") {
                 vbox {
                     this.setPrefSize(460.0, 0.0)
                     for (i in 1..18) {
-                        label() {
+                        label {
                             style {
                                 fontSize = (6.1).px
                             }

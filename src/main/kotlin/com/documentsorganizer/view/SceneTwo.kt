@@ -19,7 +19,6 @@ typealias Row = Map<String, String>
 class SceneTwo : View("Documents Organizer") {
 
     private val mainController: MainController by inject()
-    private val mainView: MainView by inject()
 
     override val root = borderpane {
 
