@@ -6,8 +6,17 @@ import javafx.collections.ObservableList
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
 import javafx.stage.DirectoryChooser
+import opennlp.tools.doccat.DoccatFactory
+import opennlp.tools.doccat.DoccatModel
+import opennlp.tools.doccat.DocumentCategorizerME
+import opennlp.tools.doccat.DocumentSampleStream
+import opennlp.tools.ml.AbstractTrainer
+import opennlp.tools.ml.naivebayes.NaiveBayesTrainer
+import opennlp.tools.util.*
 import tornadofx.*
+import java.io.BufferedOutputStream
 import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
@@ -141,6 +150,39 @@ class MainController : Controller() {
                 }
             }
         }
+    }
+
+    fun categorize() {
+        for (i in finalFilesList) {
+            mainView.statusText.set("Categorizing file $i")
+            val category = docCategorizer(mainView.labelText.value + File.separator + i)
+            filesWithCategory.add(mapOf("Filename" to i, "Category" to category))
+        }
+    }
+
+    fun createModel() {
+        // Read training data
+        val dataIn: InputStreamFactory =
+            MarkableFileInputStreamFactory(File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train"))
+        val lineStream: ObjectStream<String> = PlainTextByLineStream(dataIn, "UTF-8")
+        val sampleStream = DocumentSampleStream(lineStream)
+
+        // Define the training parameters
+        val params = TrainingParameters()
+        params.put(TrainingParameters.ITERATIONS_PARAM, 10.toString())
+        params.put(TrainingParameters.CUTOFF_PARAM, 0.toString())
+        params.put(AbstractTrainer.ALGORITHM_PARAM, NaiveBayesTrainer.NAIVE_BAYES_VALUE)
+
+        // Create a model from training data
+        val model: DoccatModel = DocumentCategorizerME.train("en", sampleStream, params, DoccatFactory())
+        println("Model successfully trained")
+
+        // Save the model to local
+        val modelOut =
+            BufferedOutputStream(FileOutputStream((File("").absolutePath + File.separator + "model" + File.separator + "en-docs-category.bin")))
+        model.serialize(modelOut)
+        println("Trained Model is saved locally")
+        alert(Alert.AlertType.INFORMATION, "", "Trained Model successfully", ButtonType.OK)
     }
 
 }

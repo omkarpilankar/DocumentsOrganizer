@@ -1,13 +1,18 @@
 package com.documentsorganizer.view
 
 import com.documentsorganizer.controller.MainController
-import com.documentsorganizer.controller.docCategorizer
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Pos
+import javafx.scene.control.Alert
+import javafx.scene.control.ButtonType
 import tornadofx.*
 import javafx.scene.control.TableColumn
 import javafx.scene.text.FontWeight
 import java.io.File
+import java.io.FileOutputStream
+import java.net.URL
+import java.nio.channels.Channels
+import java.nio.channels.ReadableByteChannel
 
 typealias Row = Map<String, String>
 
@@ -34,6 +39,24 @@ class SceneTwo : View("Documents Organizer") {
                         AboutView().openWindow()
                     }
                 }
+                menu("Options") {
+                    item("Create/Update Model").action {
+                        if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
+                            mainController.createModel()
+                        } else {
+                            alert(Alert.AlertType.WARNING, "", "Training data file not found", ButtonType.OK)
+                        }
+                    }
+                    item("Download Training data file").action {
+                        val url = URL("https://www.dropbox.com/s/gjkk47gjvlnb94f/en-docs-category.train?dl=1")
+                        val rbc: ReadableByteChannel = Channels.newChannel(url.openStream())
+                        val fos = FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
+                        fos.channel.transferFrom(rbc, 0, Long.MAX_VALUE)
+                        if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
+                            alert(Alert.AlertType.INFORMATION, "", "Training Data file downloaded successfully", ButtonType.OK)
+                        }
+                    }
+                }
             }
         }
 
@@ -49,10 +72,6 @@ class SceneTwo : View("Documents Organizer") {
                         fontSize = 16.px
                         fontWeight = FontWeight.BOLD
                     }
-                }
-                for (i in mainController.finalFilesList) {
-                    val category = docCategorizer(mainView.labelText.value + File.separator + i)
-                    mainController.filesWithCategory.add(mapOf("Filename" to i, "Category" to category))
                 }
 
                 tableview(mainController.filesWithCategory) {

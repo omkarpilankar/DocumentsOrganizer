@@ -2,6 +2,7 @@ package com.documentsorganizer.view
 
 import com.documentsorganizer.controller.MainController
 import javafx.beans.property.SimpleStringProperty
+import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
@@ -9,12 +10,17 @@ import javafx.scene.control.SelectionMode
 import javafx.scene.text.FontWeight
 import tornadofx.*
 import java.io.File
+import java.io.FileOutputStream
+import java.net.URL
+import java.nio.channels.Channels
+import java.nio.channels.ReadableByteChannel
 
 class MainView : View("Documents Organizer") {
 
     private val mainController: MainController by inject()
 
     var labelText = SimpleStringProperty()
+    var statusText = SimpleStringProperty()
 
     override val root = stackpane {
         borderpane {
@@ -34,6 +40,24 @@ class MainView : View("Documents Organizer") {
                         }
                         item("About", "Shortcut+a").action {
                             AboutView().openWindow()
+                        }
+                    }
+                    menu("Options") {
+                        item("Create/Update Model").action {
+                            if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
+                                mainController.createModel()
+                            } else {
+                                alert(Alert.AlertType.WARNING, "", "Training data file not found", ButtonType.OK)
+                            }
+                        }
+                        item("Download Training data file").action {
+                            val url = URL("https://www.dropbox.com/s/gjkk47gjvlnb94f/en-docs-category.train?dl=1")
+                            val rbc: ReadableByteChannel = Channels.newChannel(url.openStream())
+                            val fos = FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
+                            fos.channel.transferFrom(rbc, 0, Long.MAX_VALUE)
+                            if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
+                                alert(Alert.AlertType.INFORMATION, "", "Training Data file downloaded successfully", ButtonType.OK)
+                            }
                         }
                     }
                 }
@@ -175,13 +199,18 @@ class MainView : View("Documents Organizer") {
             right {
                 vbox {
                     this.setPrefSize(460.0, 0.0)
-                    for (i in 1..10) {
-                        label()
+                    for (i in 1..18) {
+                        label() {
+                            style {
+                                fontSize = (6.1).px
+                            }
+                        }
                     }
                     label("Final list of files to be categorized: ") {
                         vboxConstraints {
                             marginTop = 10.0
                             marginLeft = 10.0
+                            marginBottom = 3.0
                         }
                         style {
                             fontSize = 16.px
@@ -196,34 +225,55 @@ class MainView : View("Documents Organizer") {
                             marginRight = 10.0
                         }
                     }
+                    button("Categorize") {
+                        vboxConstraints {
+                            marginTop = 15.0
+                            marginBottom = 15.0
+                            marginRight = 10.0
+                            marginLeft = 350.0
+                        }
+                        action {
+                            if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
+                                if (mainController.finalFilesList.isEmpty()) {
+                                    alert(Alert.AlertType.WARNING, "", "No files in final list, Please add files to final list to continue", ButtonType.OK)
+
+                                } else {
+                                    mainController.categorize()
+                                    replaceWith<SceneTwo>()
+                                }
+                            } else {
+                                alert(Alert.AlertType.ERROR, "", "Training data file not found", ButtonType.OK)
+                            }
+                        }
+                        style {
+                            fontSize = 16.px
+                        }
+                    }
                 }
             }
 
             bottom {
-                vbox {
-                    hbox {
-                        button("Categorize") {
-                            hboxConstraints {
-                                marginBottom = 15.0
-                                marginRight = 10.0
-                            }
-                            action {
-                                if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
-                                    if (mainController.finalFilesList.isEmpty()) {
-                                        alert(Alert.AlertType.WARNING, "", "No files in final list, Please add files to final list to continue", ButtonType.OK)
-
-                                    } else {
-                                        replaceWith<SceneTwo>()
-                                    }
-                                } else {
-                                    alert(Alert.AlertType.ERROR, "", "Training data file not found", ButtonType.OK)
-                                }
-                            }
-                            style {
-                                fontSize = 16.px
-                            }
+                hbox {
+                    label("Status: ") {
+                        hboxConstraints {
+                            marginTop = 15.0
+                            marginBottom = 15.0
+                            marginLeft = 15.0
                         }
-                        alignment = Pos.BASELINE_RIGHT
+                        style {
+                            fontSize = 15.px
+                        }
+                    }
+                    label {
+                        hboxConstraints {
+                            marginTop = 15.0
+                            marginBottom = 15.0
+                        }
+                        style {
+                            fontSize = 15.px
+                            fontWeight = FontWeight.BOLD
+                        }
+                        bind(statusText)
                     }
                 }
             }
