@@ -3,9 +3,8 @@ package com.documentsorganizer.view
 import com.documentsorganizer.controller.MainController
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Pos
-import javafx.scene.control.Alert
-import javafx.scene.control.ButtonType
-import javafx.scene.control.SelectionMode
+import javafx.scene.control.*
+import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 import java.io.File
@@ -19,12 +18,16 @@ class MainView : View("Documents Organizer") {
     private val mainController: MainController by inject()
 
     var labelText = SimpleStringProperty()
+    var statusText = SimpleStringProperty()
 
     override val root = stackpane {
         borderpane {
 
             // Top section of the Main window
             top {
+                style {
+                    borderColor += box(all = Color.BLACK)
+                }
                 menubar {
                     isVisible = true
                     menu("File") {
@@ -63,6 +66,9 @@ class MainView : View("Documents Organizer") {
 
             // Left section of the Main Window
             left {
+                style {
+                    borderColor += box(all = Color.BLACK)
+                }
                 vbox {
                     this.setPrefSize(460.0, 0.0)
                     labelText.set("None")
@@ -141,6 +147,9 @@ class MainView : View("Documents Organizer") {
 
             // Center section of the main window
             center {
+                style {
+                    borderColor += box(all = Color.BLACK)
+                }
                 vbox {
                     alignment = Pos.TOP_CENTER
                     for (i in 1..19) {
@@ -195,6 +204,9 @@ class MainView : View("Documents Organizer") {
 
             // Right section of the main window
             right {
+                style {
+                    borderColor += box(all = Color.BLACK)
+                }
                 vbox {
                     this.setPrefSize(460.0, 0.0)
                     for (i in 1..18) {
@@ -223,6 +235,7 @@ class MainView : View("Documents Organizer") {
                             marginRight = 10.0
                         }
                     }
+
                     button("Categorize") {
                         vboxConstraints {
                             marginTop = 15.0
@@ -234,10 +247,16 @@ class MainView : View("Documents Organizer") {
                             if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
                                 if (mainController.finalFilesList.isEmpty()) {
                                     alert(Alert.AlertType.WARNING, "", "No files in final list, Please add files to final list to continue", ButtonType.OK)
-
                                 } else {
-                                    mainController.categorize()
-                                    replaceWith<SceneTwo>()
+                                    statusText.set("Categorizing Files")
+                                    alert(Alert.AlertType.CONFIRMATION, "", "Are you sure you want to continue", ButtonType.YES, ButtonType.NO, actionFn = {
+                                        btnType -> if(btnType.buttonData == ButtonBar.ButtonData.YES) {
+                                            mainController.categorize()
+                                            replaceWith<SceneTwo>()
+                                        } else {
+                                            statusText.set("Idle")
+                                        }
+                                    })
                                 }
                             } else {
                                 alert(Alert.AlertType.ERROR, "", "Training data file not found", ButtonType.OK)
@@ -246,6 +265,36 @@ class MainView : View("Documents Organizer") {
                         style {
                             fontSize = 16.px
                         }
+                    }
+                }
+            }
+
+            bottom {
+                hbox {
+                    style {
+                        borderColor += box(all = Color.BLACK)
+                    }
+                    label("Status: ") {
+                        hboxConstraints {
+                            marginTop = 15.0
+                            marginBottom = 15.0
+                            marginLeft = 15.0
+                        }
+                        style {
+                            fontSize = 18.px
+                        }
+                    }
+                    statusText.set("Idle")
+                    label {
+                        hboxConstraints {
+                            marginTop = 15.0
+                            marginBottom = 15.0
+                        }
+                        style {
+                            fontSize = 18.px
+                            fontWeight = FontWeight.BOLD
+                        }
+                        bind(statusText)
                     }
                 }
             }

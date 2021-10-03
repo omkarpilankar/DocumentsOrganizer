@@ -4,6 +4,7 @@ import com.documentsorganizer.controller.MainController
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Pos
 import javafx.scene.control.Alert
+import javafx.scene.control.ButtonBar
 import javafx.scene.control.ButtonType
 import tornadofx.*
 import javafx.scene.control.TableColumn
@@ -19,6 +20,9 @@ typealias Row = Map<String, String>
 class SceneTwo : View("Documents Organizer") {
 
     private val mainController: MainController by inject()
+    private val mainView: MainView by inject()
+
+    private val finalPath = mainView.labelText.value
 
     override val root = borderpane {
 
@@ -77,7 +81,7 @@ class SceneTwo : View("Documents Organizer") {
                     mainController.filesWithCategory.first().keys.forEach { columnName ->
                         column(columnName) { cell: TableColumn.CellDataFeatures<Row, String> ->
                             SimpleStringProperty(cell.value[columnName])
-                        }.fixedWidth(490.0)
+                        }.fixedWidth(483.0)
                     }
                     vboxConstraints {
                         marginTop = 10.0
@@ -101,11 +105,15 @@ class SceneTwo : View("Documents Organizer") {
                         fontSize = 16.px
                     }
                     action {
-                        mainController.commitChanges(mainController.filesWithCategory)
-                        replaceWith<FinalScene>()
+                        alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to continue", "Changes will be made to the structure of the selected directory $finalPath", ButtonType.YES, ButtonType.NO, actionFn = {
+                                btnType -> if(btnType.buttonData == ButtonBar.ButtonData.YES) {
+                                    mainController.commitChanges(mainController.filesWithCategory)
+                                    replaceWith<FinalScene>()
+                            }
+                        })
                     }
                 }
-                alignment = Pos.BASELINE_RIGHT
+                alignment = Pos.BOTTOM_RIGHT
             }
         }
 

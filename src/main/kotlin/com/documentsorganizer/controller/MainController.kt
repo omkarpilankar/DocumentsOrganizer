@@ -6,6 +6,8 @@ import javafx.collections.ObservableList
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
 import javafx.stage.DirectoryChooser
+import javafx.stage.Stage
+import javafx.util.Duration
 import opennlp.tools.doccat.DoccatFactory
 import opennlp.tools.doccat.DoccatModel
 import opennlp.tools.doccat.DocumentCategorizerME
@@ -183,5 +185,4 @@ class MainController : Controller() {
         println("Trained Model is saved locally")
         alert(Alert.AlertType.INFORMATION, "", "Trained Model successfully", ButtonType.OK)
     }
-
 }

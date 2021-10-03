@@ -12,6 +12,8 @@ fun docCategorizer(file: String): String {
     val outcomes: DoubleArray? = docCat.categorize(extractText(file))
 
     // Print the probabilities of the categories to console
+    println("\n##############################################################################################")
+    print("Filename: $file")
     println("\n---------------------------------\nCategory : Probability\n---------------------------------")
     for (i in 0 until docCat.numberOfCategories) {
         println(docCat.getCategory(i).toString() + " : " + outcomes?.get(i))
@@ -20,6 +22,7 @@ fun docCategorizer(file: String): String {
 
     // Print the final result for the selected document
     println(docCat.getBestCategory(outcomes) + " : is the predicted category for the given document.")
+    println("##############################################################################################")
 
     return docCat.getBestCategory(outcomes)
 
