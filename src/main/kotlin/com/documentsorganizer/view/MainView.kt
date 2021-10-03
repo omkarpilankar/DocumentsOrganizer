@@ -19,7 +19,6 @@ class MainView : View("Documents Organizer") {
     private val mainController: MainController by inject()
 
     var labelText = SimpleStringProperty()
-    var statusText = SimpleStringProperty()
 
     override val root = stackpane {
         borderpane {
@@ -247,32 +246,6 @@ class MainView : View("Documents Organizer") {
                         style {
                             fontSize = 16.px
                         }
-                    }
-                }
-            }
-
-            bottom {
-                hbox {
-                    label("Status: ") {
-                        hboxConstraints {
-                            marginTop = 15.0
-                            marginBottom = 15.0
-                            marginLeft = 15.0
-                        }
-                        style {
-                            fontSize = 15.px
-                        }
-                    }
-                    label {
-                        hboxConstraints {
-                            marginTop = 15.0
-                            marginBottom = 15.0
-                        }
-                        style {
-                            fontSize = 15.px
-                            fontWeight = FontWeight.BOLD
-                        }
-                        bind(statusText)
                     }
                 }
             }

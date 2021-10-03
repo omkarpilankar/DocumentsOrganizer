@@ -154,7 +154,6 @@ class MainController : Controller() {
 
     fun categorize() {
         for (i in finalFilesList) {
-            mainView.statusText.set("Categorizing file $i")
             val category = docCategorizer(mainView.labelText.value + File.separator + i)
             filesWithCategory.add(mapOf("Filename" to i, "Category" to category))
         }
