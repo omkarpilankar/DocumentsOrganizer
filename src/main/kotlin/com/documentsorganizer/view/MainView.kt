@@ -22,10 +22,6 @@ class MainView : View("Documents Organizer") {
 
     override val root = borderpane {
 
-        style {
-            backgroundColor += Color.GHOSTWHITE
-        }
-
         // Top section of the Main window
         top {
             menubar {
