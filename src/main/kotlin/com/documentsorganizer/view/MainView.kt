@@ -18,9 +18,13 @@ class MainView : View("Documents Organizer") {
     private val mainController: MainController by inject()
 
     var labelText = SimpleStringProperty()
-    var statusText = SimpleStringProperty()
+    private var statusText = SimpleStringProperty()
 
     override val root = borderpane {
+
+        style {
+            backgroundColor += Color.GHOSTWHITE
+        }
 
         // Top section of the Main window
         top {
@@ -140,6 +144,9 @@ class MainView : View("Documents Organizer") {
                         marginTop = 10.0
                         marginLeft = 10.0
                     }
+                    style {
+                        backgroundColor += Color.WHITESMOKE
+                    }
                 }
             }
         }
@@ -227,6 +234,9 @@ class MainView : View("Documents Organizer") {
                         marginTop = 10.0
                         marginRight = 10.0
                     }
+                    style {
+                        backgroundColor += Color.WHITESMOKE
+                    }
                 }
 
                 button("Categorize") {
@@ -281,8 +291,8 @@ class MainView : View("Documents Organizer") {
                 }
                 label("Status: ") {
                     hboxConstraints {
-                        marginTop = 15.0
-                        marginBottom = 15.0
+                        marginTop = 3.0
+                        marginBottom = 3.0
                         marginLeft = 15.0
                     }
                     style {
@@ -292,14 +302,17 @@ class MainView : View("Documents Organizer") {
                 statusText.set("Idle")
                 label {
                     hboxConstraints {
-                        marginTop = 15.0
-                        marginBottom = 15.0
+                        marginTop =3.0
+                        marginBottom = 3.0
                     }
                     style {
                         fontSize = 18.px
                         fontWeight = FontWeight.BOLD
                     }
                     bind(statusText)
+                }
+                style {
+                    backgroundColor += Color.LIGHTGREEN
                 }
             }
         }

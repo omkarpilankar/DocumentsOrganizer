@@ -8,6 +8,7 @@ import javafx.scene.control.ButtonBar
 import javafx.scene.control.ButtonType
 import tornadofx.*
 import javafx.scene.control.TableColumn
+import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import java.io.File
 import java.io.FileOutputStream
@@ -25,6 +26,10 @@ class SceneTwo : View("Documents Organizer") {
     private val finalPath = mainView.labelText.value
 
     override val root = borderpane {
+
+        style {
+            backgroundColor += Color.GHOSTWHITE
+        }
 
         top {
             menubar {
@@ -94,6 +99,9 @@ class SceneTwo : View("Documents Organizer") {
                         marginBottom = 10.0
                         marginRight = 10.0
                         marginLeft = 10.0
+                    }
+                    style {
+                        backgroundColor += Color.WHITESMOKE
                     }
                 }
             }

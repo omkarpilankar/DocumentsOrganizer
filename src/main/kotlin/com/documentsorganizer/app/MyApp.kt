@@ -9,7 +9,7 @@ class MyApp : App(MainView::class) {
 
     override fun start(stage: Stage) {
         with(stage) {
-            height = 800.0
+            height = 775.0
             width = 1005.0
             isResizable = false
             addStageIcon(Image("logo.png"))

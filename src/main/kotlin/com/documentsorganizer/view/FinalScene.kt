@@ -4,6 +4,7 @@ import com.documentsorganizer.controller.MainController
 import javafx.geometry.Pos
 import javafx.scene.control.Alert
 import javafx.scene.control.ButtonType
+import javafx.scene.paint.Color
 import javafx.scene.text.FontWeight
 import tornadofx.*
 import java.io.File
@@ -17,6 +18,10 @@ class FinalScene : View("Documents Organizer") {
     private val mainController: MainController by inject()
 
     override val root = borderpane {
+
+        style {
+            backgroundColor += Color.GHOSTWHITE
+        }
 
         top {
             menubar {
