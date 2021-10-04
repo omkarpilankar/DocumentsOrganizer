@@ -45,10 +45,16 @@ class FinalScene : View("Documents Organizer") {
                     item("Download Training data file").action {
                         val url = URL("https://www.dropbox.com/s/gjkk47gjvlnb94f/en-docs-category.train?dl=1")
                         val rbc: ReadableByteChannel = Channels.newChannel(url.openStream())
-                        val fos = FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
+                        val fos =
+                            FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
                         fos.channel.transferFrom(rbc, 0, Long.MAX_VALUE)
                         if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
-                            alert(Alert.AlertType.INFORMATION, "", "Training Data file downloaded successfully", ButtonType.OK)
+                            alert(
+                                Alert.AlertType.INFORMATION,
+                                "",
+                                "Training Data file downloaded successfully",
+                                ButtonType.OK
+                            )
                         }
                     }
                 }

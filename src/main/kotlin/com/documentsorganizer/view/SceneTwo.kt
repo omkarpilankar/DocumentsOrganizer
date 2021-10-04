@@ -53,10 +53,16 @@ class SceneTwo : View("Documents Organizer") {
                     item("Download Training data file").action {
                         val url = URL("https://www.dropbox.com/s/gjkk47gjvlnb94f/en-docs-category.train?dl=1")
                         val rbc: ReadableByteChannel = Channels.newChannel(url.openStream())
-                        val fos = FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
+                        val fos =
+                            FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
                         fos.channel.transferFrom(rbc, 0, Long.MAX_VALUE)
                         if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
-                            alert(Alert.AlertType.INFORMATION, "", "Training Data file downloaded successfully", ButtonType.OK)
+                            alert(
+                                Alert.AlertType.INFORMATION,
+                                "",
+                                "Training Data file downloaded successfully",
+                                ButtonType.OK
+                            )
                         }
                     }
                 }
@@ -105,12 +111,18 @@ class SceneTwo : View("Documents Organizer") {
                         fontSize = 16.px
                     }
                     action {
-                        alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to continue", "Changes will be made to the structure of the selected directory $finalPath", ButtonType.YES, ButtonType.NO, actionFn = {
-                                btnType -> if(btnType.buttonData == ButtonBar.ButtonData.YES) {
+                        alert(
+                            Alert.AlertType.CONFIRMATION,
+                            "Are you sure you want to continue?",
+                            "Changes will be made to the structure of the selected directory $finalPath",
+                            ButtonType.YES,
+                            ButtonType.NO,
+                            actionFn = { btnType ->
+                                if (btnType.buttonData == ButtonBar.ButtonData.YES) {
                                     mainController.commitChanges(mainController.filesWithCategory)
                                     replaceWith<FinalScene>()
-                            }
-                        })
+                                }
+                            })
                     }
                 }
                 alignment = Pos.BOTTOM_RIGHT

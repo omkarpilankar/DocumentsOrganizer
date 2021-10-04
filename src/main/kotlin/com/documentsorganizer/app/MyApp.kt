@@ -5,7 +5,7 @@ import javafx.scene.image.Image
 import javafx.stage.Stage
 import tornadofx.*
 
-class MyApp: App(MainView::class) {
+class MyApp : App(MainView::class) {
 
     override fun start(stage: Stage) {
         with(stage) {

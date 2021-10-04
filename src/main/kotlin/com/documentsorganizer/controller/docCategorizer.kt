@@ -5,7 +5,8 @@ import opennlp.tools.doccat.*
 
 fun docCategorizer(file: String): String {
 
-    val model = DoccatModel(File(File("").absolutePath + File.separator + "model" + File.separator +"en-docs-category.bin"))
+    val model =
+        DoccatModel(File(File("").absolutePath + File.separator + "model" + File.separator + "en-docs-category.bin"))
 
     // Test the model by subjecting it to prediction
     val docCat: DocumentCategorizer = DocumentCategorizerME(model)

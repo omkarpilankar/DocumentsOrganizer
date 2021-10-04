@@ -54,10 +54,16 @@ class MainView : View("Documents Organizer") {
                         item("Download Training data file").action {
                             val url = URL("https://www.dropbox.com/s/gjkk47gjvlnb94f/en-docs-category.train?dl=1")
                             val rbc: ReadableByteChannel = Channels.newChannel(url.openStream())
-                            val fos = FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
+                            val fos =
+                                FileOutputStream(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")
                             fos.channel.transferFrom(rbc, 0, Long.MAX_VALUE)
                             if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
-                                alert(Alert.AlertType.INFORMATION, "", "Training Data file downloaded successfully", ButtonType.OK)
+                                alert(
+                                    Alert.AlertType.INFORMATION,
+                                    "",
+                                    "Training Data file downloaded successfully",
+                                    ButtonType.OK
+                                )
                             }
                         }
                     }
@@ -246,17 +252,28 @@ class MainView : View("Documents Organizer") {
                         action {
                             if ((File(File("").absolutePath + File.separator + "train" + File.separator + "en-docs-category.train")).exists()) {
                                 if (mainController.finalFilesList.isEmpty()) {
-                                    alert(Alert.AlertType.WARNING, "", "No files in final list, Please add files to final list to continue", ButtonType.OK)
+                                    alert(
+                                        Alert.AlertType.WARNING,
+                                        "",
+                                        "No files in final list, Please add files to final list to continue",
+                                        ButtonType.OK
+                                    )
                                 } else {
                                     statusText.set("Categorizing Files")
-                                    alert(Alert.AlertType.CONFIRMATION, "", "Are you sure you want to continue", ButtonType.YES, ButtonType.NO, actionFn = {
-                                        btnType -> if(btnType.buttonData == ButtonBar.ButtonData.YES) {
-                                            mainController.categorize()
-                                            replaceWith<SceneTwo>()
-                                        } else {
-                                            statusText.set("Idle")
-                                        }
-                                    })
+                                    alert(
+                                        Alert.AlertType.CONFIRMATION,
+                                        "",
+                                        "Are you sure you want to continue?",
+                                        ButtonType.YES,
+                                        ButtonType.NO,
+                                        actionFn = { btnType ->
+                                            if (btnType.buttonData == ButtonBar.ButtonData.YES) {
+                                                mainController.categorize()
+                                                replaceWith<SceneTwo>()
+                                            } else {
+                                                statusText.set("Idle")
+                                            }
+                                        })
                                 }
                             } else {
                                 alert(Alert.AlertType.ERROR, "", "Training data file not found", ButtonType.OK)
