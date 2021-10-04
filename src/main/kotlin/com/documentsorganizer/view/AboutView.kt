@@ -37,6 +37,18 @@ class AboutView : View("About") {
                         textAlignment = TextAlignment.CENTER
                     }
                 }
+                label("Made by Omkar Dilip Pilankar") {
+                    vboxConstraints {
+                        marginTop = 10.0
+                        marginBottom = 10.0
+                    }
+                    style {
+                        wrapText = true
+                        fontSize = 16.px
+                        fontWeight = FontWeight.BOLD
+                        textAlignment = TextAlignment.CENTER
+                    }
+                }
             }
         }
 
