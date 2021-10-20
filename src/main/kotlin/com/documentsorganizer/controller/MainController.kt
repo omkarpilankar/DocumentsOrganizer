@@ -54,6 +54,7 @@ class MainController : Controller() {
         }
     }
 
+    // Makes a list of files
     fun listFiles() {
 
         var numberOfFiles = 0
@@ -93,6 +94,7 @@ class MainController : Controller() {
         }
     }
 
+    // Logic to add files from list to final list
     fun addToFinal() {
         if (finalFilesList.containsAll(selectedFilesList)) {
             alert(Alert.AlertType.WARNING, "", "File(s) already added to final list", ButtonType.OK)
@@ -101,6 +103,7 @@ class MainController : Controller() {
         }
     }
 
+    // Logic to add all files from list to final list
     fun addAllToFinal() {
         if (finalFilesList.containsAll(filesList)) {
             alert(Alert.AlertType.WARNING, "", "All files already added to final list", ButtonType.OK)
@@ -109,6 +112,7 @@ class MainController : Controller() {
         }
     }
 
+    // Logic to remove files from list to final list
     fun removeFromFinal() {
         if (finalFilesList.isEmpty()) {
             alert(Alert.AlertType.WARNING, "", "File(s) already removed from final list", ButtonType.OK)
@@ -117,6 +121,7 @@ class MainController : Controller() {
         }
     }
 
+    // Logic to remove all files from list to final list
     fun removeAllFromFinal() {
         if (finalFilesList.isEmpty()) {
             alert(Alert.AlertType.WARNING, "", "All files already removed from final list", ButtonType.OK)
@@ -125,6 +130,7 @@ class MainController : Controller() {
         }
     }
 
+    // Categorize the document and add it to filesWithCategory Map
     fun categorize() {
         for (i in finalFilesList) {
             val category = docCategorizer(mainView.labelText.value + File.separator + i)
@@ -132,6 +138,7 @@ class MainController : Controller() {
         }
     }
 
+    // Logic to create Model
     fun createModel() {
         // Read training data
         val dataIn: InputStreamFactory =
@@ -157,6 +164,7 @@ class MainController : Controller() {
         alert(Alert.AlertType.INFORMATION, "", "Trained Model successfully", ButtonType.OK)
     }
 
+    // Logic to commit changes to filesystem
     fun commitChanges(categoryMap: List<Map<String, String>>) {
         for (i in categoryMap) {
             val path: Path =
