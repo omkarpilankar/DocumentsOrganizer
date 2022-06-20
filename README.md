@@ -1,5 +1,5 @@
 # Documents Organizer
-A Kotlin based application to organize Documents using NLP (Natural Language Processing)
+A Kotlin based desktop application to organize Documents using NLP (Natural Language Processing)
 
 The proposed project tries to eliminate the problem of document categorization by
 automating the process of making categories. The software will scan through the complete
